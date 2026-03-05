@@ -52,7 +52,7 @@ jobs:
       - name: Deploy backend on EC2
         run: |
           KEY="ec2_key.pem"
-          ssh -i "$KEY" -o StrictHostKeyChecking=yes "$EC2_USER@$EC2_HOST" << 'EOF'
+          ssh -i "$KEY" -o StrictHostKeyChecking=yes "$EC2_USER@$EC2_HOST" << EOF
             set -euo pipefail
             cd "$EC2_APP_DIR" || exit 1
 
@@ -68,4 +68,4 @@ jobs:
 
             # Optional: clean npm cache
             npm cache clean --force
-            EOF
+          EOF
