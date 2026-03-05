@@ -23,12 +23,10 @@ jobs:
 
       # Install backend dependencies
       - name: Install backend dependencies
-        working-directory: server
         run: npm ci
 
       # Lint backend
       - name: Lint backend
-        working-directory: server
         run: npm run lint -- --max-warnings=0
 
   deploy:
