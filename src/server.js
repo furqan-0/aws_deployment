@@ -19,7 +19,7 @@ app.use('/health', (req, res) => {
   res.send('server is good');
 });
 
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   connectDB();
   console.log(`Server is running on port-${PORT}`);
 });
